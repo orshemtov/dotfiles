@@ -82,6 +82,9 @@ alias c="clear"
 # bat
 alias cat="bat"
 
+# Git
+alias g="lazygit"
+
 # cargo
 . "$HOME/.cargo/env"
 
