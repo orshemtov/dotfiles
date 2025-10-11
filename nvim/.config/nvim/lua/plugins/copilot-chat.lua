@@ -11,10 +11,7 @@ return {
       auto_fold = true,
 
       window = {
-        layout = "float",
-        border = "rounded",
-        width = 90,
-        height = 24,
+        layout = "vertical",
         title = "🧙 Copilot",
       },
 
