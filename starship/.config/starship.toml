@@ -55,25 +55,28 @@ disabled = true
 
 [golang]
 symbol = ""
-format = 'via [󰟓 $version](bold cyan) '
+format = ' [󰟓 $version](bold cyan) '
+version_format = 'v${major}.${minor}'
 
 [lua]
 symbol = " "
-format = 'via [󰢱 $version](bold blue) '
+format = ' [󰢱 $version](bold blue) '
 
 [nodejs]
 symbol = " "
-format = 'via [󰎙 $version](bold green) '
+format = ' [󰎙 $version](bold green) '
+version_format = 'v${major}'
 
 [python]
 symbol = ' '
-pyenv_version_name = true
+pyenv_version_name = false
 pyenv_prefix = ''
+version_format = 'v${major}.${minor}'
 
 [rust]
 symbol = ' '
-format = 'via [󱘗 $version](red bold)'
+format = ' [󱘗 $version](red bold)'
 
 [c]
 symbol = " "
-format = 'via [$name $version]($style)'
+format = ' [$name $version]($style)'
