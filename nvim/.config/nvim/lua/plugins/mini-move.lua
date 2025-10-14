@@ -5,15 +5,15 @@ return {
   config = function(_, opts)
     require("mini.move").setup({
       mappings = {
-        left = "<S-left>",
-        right = "<S-right>",
-        down = "<S-down>",
-        up = "<S-up>",
+        left = "<C-S-h>",
+        right = "<C-S-l>",
+        down = "<C-S-j>",
+        up = "<C-S-k>",
 
-        line_left = "<S-left>",
-        line_right = "<S-right>",
-        line_down = "<S-down>",
-        line_up = "<S-up>",
+        line_left = "<C-S-h>",
+        line_right = "<C-S-l>",
+        line_down = "<C-S-j>",
+        line_up = "<C-S-k>",
       },
 
       -- Options which control moving behavior
