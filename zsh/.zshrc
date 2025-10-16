@@ -106,7 +106,7 @@ alias lt="ls --tree"
 alias lth="ls --tree -a"
 
 # clear
-alias clear='clear && printf "\033c"'
+alias clear='clear && printf "\033[3J\033[H\033[2J"'
 alias c="clear"
 
 # bat
