@@ -3,4 +3,5 @@ font-family = JetBrainsMono Nerd Font
 theme = Catppuccin mocha
 window-width = 60
 window-height = 20
+macos-option-as-alt = true
 
