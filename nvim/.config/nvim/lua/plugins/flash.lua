@@ -3,7 +3,13 @@ return {
   event = "VeryLazy",
   vscode = true,
   ---@type Flash.Config
-  opts = {},
+  opts = {
+    modes = {
+      char = {
+        enabled = false,
+      },
+    },
+  },
   -- stylua: ignore
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
@@ -11,6 +17,7 @@ return {
     { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+
     -- Simulate nvim-treesitter incremental selection
     { "<c-space>", mode = { "n", "o", "x" },
       function()
@@ -20,6 +27,8 @@ return {
             ["<BS>"] = "prev"
           }
         })
-      end, desc = "Treesitter Incremental Selection" },
+      end,
+      desc = "Treesitter Incremental Selection",
+    },
   },
 }
