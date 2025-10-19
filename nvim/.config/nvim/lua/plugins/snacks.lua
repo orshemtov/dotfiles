@@ -35,10 +35,14 @@ return {
     },
 
     explorer = {
+      enabled = false,
+
       auto_open = false,
     },
 
     picker = {
+      enabled = false,
+
       hidden = true,
       ignored = false,
       exclude = {},
@@ -51,5 +55,11 @@ return {
         },
       },
     },
+  },
+  keys = {
+    { "<leader>e", false },
+    { "<leader>E", false },
+    { "<leader>fe", false },
+    { "<leader>fE", false },
   },
 }
