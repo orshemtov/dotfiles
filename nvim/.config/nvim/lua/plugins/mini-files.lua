@@ -125,6 +125,13 @@ return {
           { buffer = args.data.buf_id, desc = "Set cwd" }
         )
 
+        vim.keymap.set("n", "<Esc>", function()
+          require("mini.files").close()
+        end, {
+          buffer = buf_id,
+          desc = "Close mini.files",
+        })
+
         map_split(buf_id, opts.mappings and opts.mappings.go_in_horizontal or "<C-w>s", "horizontal", false)
         map_split(buf_id, opts.mappings and opts.mappings.go_in_vertical or "<C-w>v", "vertical", false)
         map_split(buf_id, opts.mappings and opts.mappings.go_in_horizontal_plus or "<C-w>S", "horizontal", true)
