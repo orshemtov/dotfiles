@@ -3,3 +3,8 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement number" })
+
+vim.keymap.set("n", "<leader>ai", function()
+  vim.cmd("Copilot toggle")
+  vim.cmd("Copilot status")
+end, { desc = "Toggle Copilot" })
