@@ -21,6 +21,7 @@ return {
         ---@type snacks.dashboard.Item[]
         keys = {
           { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = "󰥨 ", key = "h", desc = "Find File (cwd)", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.getcwd() })" },
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = "󰺯 ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = "",  key = "g", desc = "Git", action = function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end },
@@ -30,6 +31,7 @@ return {
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
           { icon = " ", key = "m", desc = "Mason", action = ":Mason" },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+
         },
       },
     },
