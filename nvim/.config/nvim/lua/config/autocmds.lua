@@ -15,3 +15,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.softtabstop = 8
   end,
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = { ".env", ".env.*" },
+  callback = function()
+    vim.diagnostic.enable(false)
+  end,
+})
