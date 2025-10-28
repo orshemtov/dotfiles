@@ -37,18 +37,15 @@ return {
     },
 
     explorer = {
-      enabled = false,
-
+      enabled = true,
       auto_open = false,
     },
 
     picker = {
-      enabled = false,
-
+      enabled = true,
       hidden = true,
       ignored = false,
       exclude = {},
-
       sources = {
         files = {
           hidden = true,
@@ -57,11 +54,5 @@ return {
         },
       },
     },
-  },
-  keys = {
-    { "<leader>e", false },
-    { "<leader>E", false },
-    { "<leader>fe", false },
-    { "<leader>fE", false },
   },
 }
