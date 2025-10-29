@@ -8,6 +8,9 @@ return {
       char = {
         enabled = false,
       },
+      treesitter = {
+        label = { before = false, after = false },
+      },
     },
   },
   -- stylua: ignore
