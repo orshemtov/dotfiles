@@ -16,7 +16,7 @@ return {
     picker_integration = true,
 
     keymaps = {
-      prefix = "<leader>\\",
+      prefix = "<leader>x",
       commands = false,
       run_file = true,
       run_selection = true,
