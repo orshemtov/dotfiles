@@ -15,6 +15,14 @@ success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set
 symbol = " "
 disabled = true
 
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+truncate_to_repo = true
+
+[direnv]
+disabled = false
+
 [aws]
 format = 'on [$symbol$region]($style) '
 style = 'bold blue'
@@ -22,11 +30,6 @@ symbol = ' '
 [aws.region_aliases]
 us-east-1 = 'va'
 eu-central-1 = 'fr'
-
-[directory]
-truncation_length = 8
-truncation_symbol = '…/'
-truncate_to_repo = true
 
 [git_branch]
 symbol = '🌱 '
