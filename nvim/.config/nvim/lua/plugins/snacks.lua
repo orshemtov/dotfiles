@@ -3,6 +3,7 @@
 
 return {
   "folke/snacks.nvim",
+  ---@type snacks.Config
   opts = {
     dashboard = {
       preset = {
@@ -24,7 +25,7 @@ return {
           { icon = "󰥨 ", key = "h", desc = "Find File (cwd)", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.getcwd() })" },
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = "󰺯 ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = "",  key = "g", desc = "Git", action = function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end },
+          { icon = "",  key = "g", desc = "Git", action = function() Snacks.lazygit.open( { cwd = LazyVim.root.git() }) end },
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
