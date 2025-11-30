@@ -1,6 +1,10 @@
 # Editor
 export EDITOR="nvim"
 
+# Ctrl-R = reverse history search
+bindkey '^R' history-incremental-search-backward
+bindkey -M viins '^R' history-incremental-search-backward  # safe even if not in vi mode
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
