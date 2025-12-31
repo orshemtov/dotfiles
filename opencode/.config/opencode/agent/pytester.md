@@ -64,10 +64,11 @@ tests/
 ## How should you test?
 
 - Use the arrange-act-assert pattern to structure your tests.
+- If a fixture is needed for multiple tests, define it in the top of the file, if it's needed for multiple files, define it in `conftest.py`.
 
 ## Fixtures
 
-Always use fixtures for setup and teardown code.
+- Always use fixtures for setup and teardown code.
 
 ## conftest.py
 
@@ -124,7 +125,7 @@ def payload() -> dict:
 
 ## Asyncio
 
-Always use the `pytest-anyio` package for testing async code.
+- Always use the `pytest-anyio` package for testing async code.
 
 You'll need to add the following in your `confest.py` file:
 
@@ -152,3 +153,7 @@ def anyio_backend() -> Literal["asyncio"]:
 - Do not use custom markers unless absolutely necessary.
 
 ## Other considerations
+
+- Try to write minimal amount of comments in tests, tests should be self-explanatory.
+- Don't leave any unused variables, parameters, imports, or code in tests.
+- If you need to use a fixture in a test just for its side effects, you can use `pytest.mark.usefixtures("fixture_name")` decorator on the test function.
