@@ -139,4 +139,16 @@ def anyio_backend() -> Literal["asyncio"]:
     return "asyncio"
 ```
 
+## Parametrized tests
+
+- Use parametrized tests for testing multiple inputs and outputs for the same functionality.
+- Use `pytest.param()` for better readability when you have multiple parameters, use the id argument to give each case a descriptive name.
+- Use this technique only when the test logic is the same for all cases and it can be expressed in a readable way.
+
+## Markers
+
+- Use xfail marker for tests that are expected to fail.
+- Use skip marker for tests that should be skipped.
+- Do not use custom markers unless absolutely necessary.
+
 ## Other considerations
