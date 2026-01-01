@@ -171,6 +171,11 @@ def anyio_backend() -> Literal["asyncio"]:
 
 ## Pydantic
 
+- I use a lot of pydantic models in my codebase, but I do not test pydantic models themselves, only the code that uses them.
+- There is value in testing custom validators
+- There is value in testing serializers/deserializers, only if they are actually used, i.e if we make use of model_dump(), model_validate(), model_validate_json()
+- When testing serialization/deserialization, pay attention to whether there are aliases defined in the model, and test accordingly.
+- When defining aliases on the model, sometimes we use model_config to set `populate_by_name = True`, in such cases, we can use both the field name and the alias when initializing the model, but when serializing/deserializing, we should always use the alias.
 - Do not test code related to pydantic-settings, `BaseSettings`
 - Do not test pydantic's behavior, such as default values.
 
