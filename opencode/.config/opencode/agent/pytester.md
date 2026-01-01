@@ -26,7 +26,7 @@ Distinguish between:
 
 The first one requires unit tests, while the second one requires integration tests.
 
-I would consider any code that requires heavy use of mocking to be code with side effects (I'd say more than 1-2 mocks per test).
+I would consider any code that requires mocking to be code with side effects.
 
 Each test should focus on a single behavior or functionality.
 
@@ -66,6 +66,11 @@ tests/
 - Use the arrange-act-assert pattern to structure your tests.
 - If a fixture is needed for multiple tests, define it in the top of the file, if it's needed for multiple files, define it in `conftest.py`.
 
+## Assertions
+
+- Be careful when using `call_args`, it can become very unreadable, very quickly.
+  - Using indices with `call_args` is not recommended, as it hurts readability
+
 ## Fixtures
 
 - Always use fixtures for setup and teardown code.
@@ -77,6 +82,8 @@ tests/
 If you must mock, use the `pytest-mock` package.
 
 Mock classes with `mocker.patch.object(MyClass, "my_method")` or with return value: Mock classes with `mocker.patch.object(MyClass, "my_method", return_value=42)`
+
+Do not mock code that does not have side effects, for example: serialization/deserialization functions, pure computations, etc.
 
 ## Typing
 
@@ -152,8 +159,33 @@ def anyio_backend() -> Literal["asyncio"]:
 - Use skip marker for tests that should be skipped.
 - Do not use custom markers unless absolutely necessary.
 
+## Imports
+
+- Keep imports at the beginning of the file, do NOT import code inside test functions or fixtures.
+
+## Other checks
+
+- Verify typing with `ty` type checker after writing tests.
+- Verify formatting with `ruff check --fix` after writing tests.
+- Fix all linting errors reported by `ruff` or `ty`.
+
+## Pydantic
+
+- Do not test code related to pydantic-settings, `BaseSettings`
+- Do not test pydantic's behavior, such as default values.
+
+## Organization considerations
+
+- I choose to put all code that requires mocking into integration tests, and all pure code into unit tests, this way we have a clear separation between the two types of tests.
+- Before writing tests, a common task would be to find opportunities to refactor code so it can be purely tested as unit tests, this is preferred.
+- Look for opportunities to create fixtures for common setup/teardown code.
+- Look for opportunities to parametrize tests to reduce code duplication and the number of tests.
+
 ## Other considerations
 
+- Do not test things that are super straightforward, for example: intializing a pydantic model with given values then testing that the values are set correctly, it's redundant.
 - Try to write minimal amount of comments in tests, tests should be self-explanatory.
 - Don't leave any unused variables, parameters, imports, or code in tests.
 - If you need to use a fixture in a test just for its side effects, you can use `pytest.mark.usefixtures("fixture_name")` decorator on the test function.
+- Do not use logic in tests, we are testing code for correctness, so avoid creating new logic in tests, and if you must - create a helper function or fixture for it.
+- Do not test classes that inherit from Exception, unless they have special logic, for example: `class MyException(Exception): ...` does not contain any logic, so we don't need to test it.
