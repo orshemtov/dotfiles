@@ -43,7 +43,7 @@ return {
     },
 
     picker = {
-      enabled = true,
+      enabled = false,
       hidden = true,
       ignored = false,
       exclude = {},

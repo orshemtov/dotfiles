@@ -1,4 +1,31 @@
-# 💤 LazyVim
+# Neovim Configuration
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+- Navigation
+  - Search for files by name, path, type.
+  - Nagivate buffers, tabs, splits.
+  - Navigate code symbols (functions, classes, variables).
+  - Marks, jumplist, history, harpoons, quickfix.
+- Editing
+  - Vim motions
+  - Syntax highlighting
+  - LSP
+    - Go to definition, references, implementations.
+    - Diagnostics, errors
+  - Refactors
+    - Rename symbol
+    - Extract code
+    - Code actions
+  - Linting
+  - Formatting
+  - Working with text
+    - Copy, cut, paste
+    - Indentation
+  - Completion
+- Filesystem
+  - Creating, moving, deleting files and directories.
+- Testing and debugging
+- Shell
+  - Running terminal commands
+  - Seeing command outputs
+  - Working with CLI tools: rg, fd, etc.
+- Git

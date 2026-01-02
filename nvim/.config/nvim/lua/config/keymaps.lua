@@ -3,3 +3,4 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement number" })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
