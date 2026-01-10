@@ -38,7 +38,7 @@ return {
     },
 
     explorer = {
-      enabled = true,
+      enabled = false,
       auto_open = false,
     },
 
