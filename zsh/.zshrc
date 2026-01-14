@@ -75,6 +75,9 @@ if [[ ! -f "$_vivid_cache" ]] || [[ -n "$_vivid_cache"(#qN.mh+168) ]]; then
 fi
 export LS_COLORS="$(<$_vivid_cache)"
 
+# fzf
+source <(fzf --zsh)
+
 # Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
