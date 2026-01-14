@@ -5,11 +5,21 @@ export EDITOR="nvim"
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins '^R' history-incremental-search-backward  # safe even if not in vi mode
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Homebrew (inlined)
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
-# Completion
-autoload -U compinit && compinit
+# Completion (cached daily)
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zmodload zsh/complist
 
 # Starship
@@ -18,15 +28,31 @@ eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# pyenv
+# pyenv (lazy-loaded)
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+_pyenv_lazy_load() {
+  unset -f pyenv python python3 pip pip3
+  eval "$(pyenv init - zsh)"
+}
+pyenv() { _pyenv_lazy_load && pyenv "$@"; }
+python() { _pyenv_lazy_load && python "$@"; }
+python3() { _pyenv_lazy_load && python3 "$@"; }
+pip() { _pyenv_lazy_load && pip "$@"; }
+pip3() { _pyenv_lazy_load && pip3 "$@"; }
 
-# nvm
+# nvm (lazy-loaded)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+_nvm_lazy_load() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+
+nvm() { _nvm_lazy_load && nvm "$@"; }
+node() { _nvm_lazy_load && node "$@"; }
+npm() { _nvm_lazy_load && npm "$@"; }
+npx() { _nvm_lazy_load && npx "$@"; }
 
 . "$HOME/.local/bin/env"
 
@@ -41,22 +67,24 @@ esac
 # cargo
 . "$HOME/.cargo/env"
 
+# LS_COLORS (cached weekly)
+_vivid_cache="$HOME/.cache/vivid-ls-colors"
+if [[ ! -f "$_vivid_cache" ]] || [[ -n "$_vivid_cache"(#qN.mh+168) ]]; then
+  mkdir -p "$HOME/.cache"
+  vivid generate catppuccin-mocha > "$_vivid_cache"
+fi
+export LS_COLORS="$(<$_vivid_cache)"
+
 # Carapace
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
-
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-eval "$(carapace _carapace)"
-
-bindkey '^I' complete-word
-zstyle ':completion:*' menu select
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{blue}%d%f'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace zsh)
+
+# Completion styling
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
 zstyle ':completion:*' matcher-list \
-  'm:{a-z}={A-Z}' \
+  'm:{a-zA-Z}={A-Za-z}' \
   'r:|[._-]=* r:|=*' \
   'l:|=* r:|=*'
 

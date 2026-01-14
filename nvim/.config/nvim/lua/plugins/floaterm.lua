@@ -13,7 +13,7 @@ return {
           api.cycle_term_bufs("prev")
         end, { buffer = buf })
         -- Escape to close
-        vim.keymap.set("t", "<Esc>", "<cmd>FloatermToggle<cr>", { buffer = buf })
+        vim.keymap.set("t", "<C-\\", "<cmd>FloatermToggle<cr>", { buffer = buf })
         -- Delete current terminal
         vim.keymap.set({ "n", "t" }, "<C-x>", function()
           api.delete_term(buf)
