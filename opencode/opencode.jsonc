@@ -3,4 +3,7 @@
   "instructions": [],
   "theme": "opencode",
   "autoupdate": true,
+  "keybinds": {
+    "input_newline": "shift+return,ctrl+return,alt+return,ctrl+j",
+  },
 }

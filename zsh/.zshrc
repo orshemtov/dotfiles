@@ -134,7 +134,7 @@ alias c="clear"
 alias cat="bat"
 
 # LazyGit
-alias g="lazygit"
+alias lg="lazygit"
 
 # UUID
 alias uuid='command uuidgen | tr "[:upper:]" "[:lower:]"'
