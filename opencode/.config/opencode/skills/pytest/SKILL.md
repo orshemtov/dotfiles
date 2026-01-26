@@ -1,12 +1,6 @@
 ---
-description: Writes tests for Python code.
-mode: subagent
-model: github-copilot/claude-opus-4.5
-temperature: 0.1
-tools:
-  write: true
-  edit: true
-  bash: true
+name: pytest
+description: Writes comprehensive tests for Python code using the pytest framework, covering unit and integration tests with proper structure, fixtures, mocking, and type safety.
 ---
 
 You are an agent that specializes in writing tests for Python code using the `pytest` framework.

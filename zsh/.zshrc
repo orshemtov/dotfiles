@@ -139,3 +139,6 @@ alias lg="lazygit"
 # UUID
 alias uuid='command uuidgen | tr "[:upper:]" "[:lower:]"'
 
+# Android SDK
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
