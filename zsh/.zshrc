@@ -101,16 +101,14 @@ function y() {
 }
 
 # Zoxide
-alias cd="z"
 eval "$(zoxide init zsh)"
 
 # eza
 ls() {
   local flags=(
-    -lSb 
+    -lb 
     --icons 
-    --no-time 
-    --no-filesize 
+    --header
     --no-user 
     --no-permissions 
     --group-directories-first 
@@ -122,6 +120,7 @@ ls() {
 }
 
 alias l="ls"
+alias ll="ls -l"
 alias lh="ls -a"
 alias lt="ls --tree"
 alias lth="ls --tree -a"
@@ -129,9 +128,6 @@ alias lth="ls --tree -a"
 # clear
 alias clear='clear && printf "\033[3J\033[H\033[2J"'
 alias c="clear"
-
-# bat
-alias cat="bat"
 
 # LazyGit
 alias lg="lazygit"

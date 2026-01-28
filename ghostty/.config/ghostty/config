@@ -1,8 +1,16 @@
-font-size = 24
-font-family = JetBrainsMono Nerd Font
+font-size = 18
+font-family = "JetBrainsMono NFM SemiBold"
+font-family-bold = "JetBrainsMono NFM ExtraBold"
+font-family-italic = "JetBrainsMono NFM SemiBold Italic"
+font-family-bold-italic = "JetBrainsMono NFM ExtraBold Italic"
+font-thicken = true
+font-thicken-strength = 128
 theme = Catppuccin Black
-window-width = 60
-window-height = 20
+window-width = 120
+window-height = 40
+window-position-x = 600
+window-position-y = 200
 macos-option-as-alt = true
 cursor-style = block
-
+cursor-style-blink = false
+shell-integration-features = no-cursor
