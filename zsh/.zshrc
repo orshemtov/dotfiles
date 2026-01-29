@@ -124,6 +124,7 @@ alias ll="ls -l"
 alias lh="ls -a"
 alias lt="ls --tree"
 alias lth="ls --tree -a"
+alias lts="ls --total-size"
 
 # clear
 alias clear='clear && printf "\033[3J\033[H\033[2J"'
