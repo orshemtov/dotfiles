@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [],
+  "theme": "opencode",
+  "autoupdate": true,
+  "keybinds": {
+    "input_newline": "shift+return,ctrl+return,alt+return,ctrl+j",
+    "input_paste": "ctrl+v",
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
+      "enabled": true
+    },
+    "github": {
+      "enabled": true,
+      "type": "local",
+      "command": ["/Users/or/Projects/dotfiles/opencode/.config/opencode/github-mcp.sh"]
+    }
+  }
+}

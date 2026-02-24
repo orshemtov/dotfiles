@@ -35,7 +35,7 @@ return {
           { icon = "󰺯 ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           -- { icon = "󰥨 ", key = "h", desc = "Find File (cwd)", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.getcwd() })" },
           -- { icon = "",  key = "g", desc = "Git", action = function() Snacks.lazygit.open( { cwd = LazyVim.root.git() }) end },
-          -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           -- { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           -- { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
           -- { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },

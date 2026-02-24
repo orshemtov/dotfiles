@@ -72,84 +72,13 @@ return {
     -- Pressing `gaip` will add a cursor on each line of a paragraph.
     set("n", "ga", mc.addCursorOperator, { desc = "Add cursor operator" })
 
-    -- Clone every cursor and disable the originals.
-    set({ "n", "x" }, "<leader>md", mc.duplicateCursors, { desc = "Duplicate cursors" })
-
-    -- Align cursor columns.
-    set("n", "<leader>ml", mc.alignCursors, { desc = "Align cursors" })
-
-    -- Split visual selections by regex.
-    set("x", "<leader>mR", mc.splitCursors, { desc = "Split cursors by regex" })
-
-    -- match new cursors within visual selections by regex.
-    set("x", "<leader>mM", mc.matchCursors, { desc = "Match cursors by regex" })
-
-    -- bring back cursors if you accidentally clear them
-    set("n", "<leader>mV>", mc.restoreCursors, { desc = "Restore Cursors" })
-
     -- Add a cursor for all matches of cursor word/selection in the document.
     set({ "n", "x" }, "<leader>mA", mc.matchAllAddCursors, { desc = "Match all cursors" })
-
-    -- Rotate the text contained in each visual selection between cursors.
-    set("x", "<leader>mt", function()
-      mc.transposeCursors(1)
-    end, { desc = "Transpose cursors forward" })
-    set("x", "<leader>mT", function()
-      mc.transposeCursors(-1)
-    end, { desc = "Transpose cursors backward" })
 
     -- Append/insert for each line of visual selections.
     -- Similar to block selection insertion.
     set("x", "I", mc.insertVisual, { desc = "Insert at cursors" })
     set("x", "A", mc.appendVisual, { desc = "Append at cursors" })
-
-    -- Increment/decrement sequences, treaing all cursors as one sequence.
-    set({ "n", "x" }, "g<c-a>", mc.sequenceIncrement, { desc = "Increment sequence at cursors" })
-    set({ "n", "x" }, "g<c-x>", mc.sequenceDecrement, { desc = "Decrement sequence at cursors" })
-
-    -- Add a cursor or jump to the next/previous search result.
-    set("n", "<leader>m/n", function()
-      mc.searchAddCursor(1)
-    end, { desc = "Search add cursor forward" })
-    set("n", "<leader>m/N", function()
-      mc.searchAddCursor(-1)
-    end, { desc = "Search add cursor backward" })
-
-    -- Jump to the next/previous search result without adding a cursor.
-    set("n", "<leader>m/s", function()
-      mc.searchSkipCursor(1)
-    end, { desc = "Search skip cursor forward" })
-    set("n", "<leader>m/S", function()
-      mc.searchSkipCursor(-1)
-    end, { desc = "Search skip cursor backward" })
-
-    -- Add a cursor to every search result in the buffer.
-    set("n", "<leader>m/A", mc.searchAllAddCursors, { desc = "Search add all cursors" })
-
-    -- Pressing `<leader>miwap` will create a cursor in every match of the
-    -- string captured by `iw` inside range `ap`.
-    -- This action is highly customizable, see `:h multicursor-operator`.
-    set({ "n", "x" }, "<leader>mo", mc.operator, { desc = "Multicursor operator" })
-
-    -- Add or skip adding a new cursor by matching diagnostics.
-    set({ "n", "x" }, "<leader>m]d", function()
-      mc.diagnosticAddCursor(1)
-    end, { desc = "Diagnostic add cursor forward" })
-    set({ "n", "x" }, "<leader>m[d", function()
-      mc.diagnosticAddCursor(-1)
-    end, { desc = "Diagnostic add cursor backward" })
-    set({ "n", "x" }, "<leader>m]s", function()
-      mc.diagnosticSkipCursor(1)
-    end, { desc = "Diagnostic skip cursor forward" })
-    set({ "n", "x" }, "<leader>m[S", function()
-      mc.diagnosticSkipCursor(-1)
-    end, { desc = "Diagnostic skip cursor backward" })
-
-    -- Press `mdip` to add a cursor for every error diagnostic in the range `ip`.
-    set({ "n", "x" }, "md", function()
-      -- See `:h vim.diagnostic.GetOpts`.
-      mc.diagnosticMatchCursors({ severity = vim.diagnostic.severity.ERROR })
-    end, { desc = "Match cursors at error diagnostics" })
 
     -- Customize how cursors look.
     local hl = vim.api.nvim_set_hl

@@ -122,8 +122,7 @@ ls() {
 alias l="ls"
 alias ll="ls -l"
 alias lh="ls -a"
-alias lt="ls --tree"
-alias lth="ls --tree -a"
+alias lt="ls --tree --no-time --no-filesize -a"
 alias lts="ls --total-size"
 
 # clear
@@ -135,6 +134,8 @@ alias lg="lazygit"
 
 # UUID
 alias uuid='command uuidgen | tr "[:upper:]" "[:lower:]"'
+
+alias copy="pbcopy"
 
 # Android SDK
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
