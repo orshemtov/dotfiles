@@ -2,9 +2,16 @@
   "permissions": {
     "defaultMode": "plan"
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "lua-lsp@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "effortLevel": "medium"
 }
