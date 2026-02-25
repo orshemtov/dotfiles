@@ -23,26 +23,38 @@ return {
         ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
         ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
         ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
-        ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+        ██║╚██╗██║██╔══╝  ██║   ██║╚██▗ ██╔╝██║██║╚██╔╝██║
         ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-        ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
- ]],
+        ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
         -- stylua: ignore
         ---@type snacks.dashboard.Item[]
         keys = {
-          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = "󰺯 ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          -- { icon = "󰥨 ", key = "h", desc = "Find File (cwd)", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.getcwd() })" },
-          -- { icon = "",  key = "g", desc = "Git", action = function() Snacks.lazygit.open( { cwd = LazyVim.root.git() }) end },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          -- { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          -- { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
-          -- { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
-          -- { icon = " ", key = "m", desc = "Mason", action = ":Mason" },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-
+          { icon = " ", key = "r", desc = "Recent Files",    action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "/", desc = "Find Text",       action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "s", desc = "Restore Session", action = function() require("persistence").load() end },
+          { icon = " ", key = "q", desc = "Quit",            action = ":qa" },
         },
+      },
+      sections = {
+        { section = "header" },
+        {
+          text = {
+            { "  ████\n", hl = "SnacksDashboardIcon" },
+            { "  ████\n", hl = "SnacksDashboardIcon" },
+            { "      ████\n", hl = "SnacksDashboardIcon" },
+            { "      ████\n", hl = "SnacksDashboardIcon" },
+            { "          ████\n", hl = "SnacksDashboardIcon" },
+            { "          ████\n", hl = "SnacksDashboardIcon" },
+            { "      ████\n", hl = "SnacksDashboardIcon" },
+            { "      ████\n", hl = "SnacksDashboardIcon" },
+            { "  ████\n", hl = "SnacksDashboardIcon" },
+            { "  ████\n", hl = "SnacksDashboardIcon" },
+          },
+          padding = 1,
+        },
+        { section = "keys", gap = 1, padding = 1 },
+        { section = "startup" },
       },
     },
 
