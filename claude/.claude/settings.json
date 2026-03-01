@@ -1,8 +1,13 @@
 {
   "permissions": {
+    "allow": [
+      "Bash",
+      "WebFetch",
+      "Read"
+    ],
+    "deny": [],
     "defaultMode": "plan"
   },
-  "model": "opus[1m]",
   "enabledPlugins": {
     "lua-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -13,5 +18,5 @@
     "swift-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true
   },
-  "effortLevel": "medium"
+  "model": "opus[1m]"
 }
