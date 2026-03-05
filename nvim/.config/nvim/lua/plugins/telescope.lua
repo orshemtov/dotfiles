@@ -17,8 +17,8 @@ return {
     },
   },
   keys = {
-    { "<leader><leader>", Util.pick("files", { hidden = true, no_ignore = true }), desc = "Find files" },
-    { "<leader>ff", Util.pick("files", { hidden = true, no_ignore = true }), desc = "Find files (root dir)" },
-    { "<leader>fF", Util.pick("files", { cwd = vim.uv.cwd(), hidden = true, no_ignore = true }), desc = "Find files (cwd)" },
+    { "<leader><leader>", Util.pick("files", { hidden = true }), desc = "Find files" },
+    { "<leader>ff", Util.pick("files", { hidden = true }), desc = "Find files (root dir)" },
+    { "<leader>fF", Util.pick("files", { cwd = vim.uv.cwd(), hidden = true }), desc = "Find files (cwd)" },
   },
 }

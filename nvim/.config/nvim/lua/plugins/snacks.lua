@@ -73,12 +73,12 @@ return {
     picker = {
       enabled = false,
       hidden = true,
-      ignored = false,
+      ignored = true,
       exclude = {},
       sources = {
         files = {
           hidden = true,
-          ignored = false,
+          ignored = true,
           exclude = {},
         },
       },
