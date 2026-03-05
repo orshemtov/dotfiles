@@ -146,3 +146,5 @@ alias copy="pbcopy"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 . "/Users/or/.deno/env"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
