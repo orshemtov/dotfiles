@@ -130,6 +130,9 @@ alias lh="ls -a"
 alias lt="ls --tree --no-time --no-filesize -a"
 alias lts="ls --total-size"
 
+alias nv="nvim"
+alias ghd="gh dash --config ~/.config/gh-dash/config.yml"
+
 # clear
 alias clear='clear && printf "\033[3J\033[H\033[2J"'
 alias c="clear"
