@@ -129,6 +129,7 @@ alias ll="ls -l"
 alias lh="ls -a"
 alias lt="ls --tree --no-time --no-filesize -a"
 alias lts="ls --total-size"
+alias oc="opencode"
 
 alias nv="nvim"
 alias ghd="gh dash --config ~/.config/gh-dash/config.yml"
@@ -151,7 +152,3 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 . "/Users/or/.deno/env"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
-
-# ocx (opencode)
-alias oc="ocx oc"
-alias opencode="ocx oc"

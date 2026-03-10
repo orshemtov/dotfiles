@@ -3,6 +3,11 @@
   "autoupdate": true,
   "instructions": [],
   "mcp": {
+    "apple-mcp": {
+      "type": "local",
+      "command": ["bunx", "--no-cache", "apple-mcp@latest"],
+      "enabled": true
+    },
     "context7": {
       "enabled": true,
       "headers": {
@@ -12,11 +17,27 @@
       "url": "https://mcp.context7.com/mcp"
     },
     "github": {
-      "command": [
-        "/Users/or/Projects/dotfiles/opencode/.config/opencode/github-mcp.sh"
-      ],
-      "enabled": true,
-      "type": "local"
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "enabled": true
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp",
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "enabled": true
+    },
+    "XcodeBuildMCP": {
+      "type": "local",
+      "command": ["xcodebuildmcp", "mcp"],
+      "enabled": true
     }
   }
 }
