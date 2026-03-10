@@ -3,11 +3,6 @@
   "autoupdate": true,
   "instructions": [],
   "mcp": {
-    "apple-mcp": {
-      "type": "local",
-      "command": ["bunx", "--no-cache", "apple-mcp@latest"],
-      "enabled": true
-    },
     "context7": {
       "enabled": true,
       "headers": {
@@ -37,6 +32,16 @@
     "XcodeBuildMCP": {
       "type": "local",
       "command": ["xcodebuildmcp", "mcp"],
+      "enabled": true
+    },
+    "apple-reminders": {
+      "type": "local",
+      "command": ["apple-reminders-mcp"],
+      "enabled": true
+    },
+    "apple-calendar": {
+      "type": "local",
+      "command": ["apple-calendar-mcp"],
       "enabled": true
     }
   }
