@@ -2,6 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
   "instructions": [],
+  "lsp": {
+    "pyright": {
+      "disabled": true
+    },
+    "ty": {
+      "command": ["ty", "server"],
+      "extensions": [".py", ".pyi"]
+    }
+  },
   "mcp": {
     "context7": {
       "enabled": true,
@@ -32,16 +41,6 @@
     "XcodeBuildMCP": {
       "type": "local",
       "command": ["xcodebuildmcp", "mcp"],
-      "enabled": true
-    },
-    "apple-reminders": {
-      "type": "local",
-      "command": ["apple-reminders-mcp"],
-      "enabled": true
-    },
-    "apple-calendar": {
-      "type": "local",
-      "command": ["apple-calendar-mcp"],
       "enabled": true
     }
   }
