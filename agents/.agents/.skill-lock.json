@@ -1,1 +1,26 @@
-{}
+{
+  "version": 3,
+  "skills": {
+    "ib-client": {
+      "source": "orshemtov/ib",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/orshemtov/ib.git",
+      "skillPath": "skills/ib-client/SKILL.md",
+      "skillFolderHash": "bbbfb73bad77a91e07cdcd55ff5e4b2d2f6c96be",
+      "installedAt": "2026-03-13T17:07:18.280Z",
+      "updatedAt": "2026-03-13T17:07:18.280Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-03-13T17:07:22.311Z",
+      "updatedAt": "2026-03-13T17:07:22.311Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}
