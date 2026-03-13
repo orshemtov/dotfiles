@@ -1,0 +1,1 @@
+../../../Projects/dotfiles/agents/.agents/skills/skill-creator/SKILL.md
