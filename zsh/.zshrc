@@ -141,6 +141,11 @@ alias c="clear"
 # LazyGit
 alias lg="lazygit"
 
+# Worktrunk
+alias wtn="wt switch --create --execute=opencode"
+alias wts="wt switch"
+alias wtc="wt step commit"
+
 # UUID
 alias uuid='command uuidgen | tr "[:upper:]" "[:lower:]"'
 
