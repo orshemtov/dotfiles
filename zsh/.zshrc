@@ -1,3 +1,4 @@
+export PATH="/Users/or/.local/bin:$PATH"
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/Users/or/.zsh/completions:"* ]]; then export FPATH="/Users/or/.zsh/completions:$FPATH"; fi
 # Editor
@@ -157,3 +158,5 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 . "/Users/or/.deno/env"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+

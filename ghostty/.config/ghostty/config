@@ -11,6 +11,7 @@ window-height = 40
 window-position-x = 600
 window-position-y = 200
 macos-option-as-alt = true
+macos-auto-secure-input = false
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor

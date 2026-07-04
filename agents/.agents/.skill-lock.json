@@ -18,9 +18,45 @@
       "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
       "installedAt": "2026-03-13T17:07:22.311Z",
       "updatedAt": "2026-03-13T17:07:22.311Z"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pbakaus/impeccable.git",
+      "skillPath": "skill/SKILL.md",
+      "skillFolderHash": "bc452acaa3a105bb0f4551845e7d48ec2360eefb",
+      "installedAt": "2026-05-07T20:22:56.851Z",
+      "updatedAt": "2026-05-07T20:22:56.851Z"
+    },
+    "ios-simulator-skill": {
+      "source": "conorluddy/ios-simulator-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/conorluddy/ios-simulator-skill.git",
+      "skillPath": "ios-simulator-skill/skills/ios-simulator-skill/SKILL.md",
+      "skillFolderHash": "6a923e4f77fd1f7992b2d135abcb1944f84bd238",
+      "installedAt": "2026-05-30T12:21:49.433Z",
+      "updatedAt": "2026-05-30T12:21:49.433Z"
     }
   },
   "dismissed": {
     "findSkillsPrompt": true
-  }
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "dexto",
+    "firebender",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "pi",
+    "claude-code"
+  ]
 }

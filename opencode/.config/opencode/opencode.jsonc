@@ -20,19 +20,6 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
     },
-    "github": {
-      "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
-      "environment": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN}",
-      },
-      "enabled": true,
-    },
-    "supabase": {
-      "type": "remote",
-      "url": "https://mcp.supabase.com/mcp",
-      "enabled": true,
-    },
     "playwright": {
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp@latest"],
@@ -41,6 +28,11 @@
     "XcodeBuildMCP": {
       "type": "local",
       "command": ["xcodebuildmcp", "mcp"],
+      "enabled": true,
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp",
       "enabled": true,
     },
   },

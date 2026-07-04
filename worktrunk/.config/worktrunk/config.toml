@@ -1,5 +1,24 @@
 [commit.generation]
-command = "opencode run -m github-copilot/claude-haiku-4.5 --variant fast"
+command = "CLAUDECODE= MAX_THINKING_TOKENS=0 claude -p --no-session-persistence --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
+
+template = """
+Write a commit message for the staged changes below.
+
+Format: <type>: <description>
+Types: feat, fix, refactor, perf, test, docs, ci, chore, revert
+Rules:
+- Subject under 50 chars, lowercase, imperative mood
+- Output only the commit message, no quotes or code blocks
+- For material changes, add a blank line then a brief body
+
+<diffstat>
+{{ git_diff_stat }}
+</diffstat>
+
+<diff>
+{{ git_diff }}
+</diff>
+"""
 
 [post-switch]
 title = "printf '\\033]0;%s\\007' {{ branch }}"
