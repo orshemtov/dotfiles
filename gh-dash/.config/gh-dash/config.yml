@@ -1,10 +1,10 @@
 prSections:
-  - title: Open Pull Requests
-    filters: is:open
   - title: My Pull Requests
     filters: is:open author:@me
   - title: Needs My Review
     filters: is:open review-requested:@me
+  - title: Open Pull Requests
+    filters: is:open
   - title: Involved
     filters: is:open involves:@me -author:@me
 issuesSections:
@@ -38,7 +38,7 @@ repo:
   prsRefetchIntervalSeconds: 60
 defaults:
   preview:
-    open: false
+    open: true
     width: 70
   prsLimit: 20
   prApproveComment: LGTM
@@ -92,6 +92,20 @@ keybindings:
       command: >
         tmux new-window -n "PR-{{.PrNumber}}"
         'wt switch pr:{{.PrNumber}} -x "opencode --prompt `@code-reviewer: review-pr-for-this-branch`"'
+    - key: T
+      name: review with tuicr
+      command: >
+        tab=$(herdr tab create --cwd {{.RepoPath}} --label "tuicr-{{.PrNumber}}" --focus)
+        pane=$(printf '%s\n' "$tab" | jq -r '.result.root_pane.pane_id')
+        sleep 0.5
+        herdr pane run "$pane" 'tuicr pr {{.RepoName}}#{{.PrNumber}}'
+    - key: U
+      name: auto review with codex
+      command: >
+        tab=$(herdr tab create --cwd {{.RepoPath}} --label "codex-{{.PrNumber}}" --focus)
+        pane=$(printf '%s\n' "$tab" | jq -r '.result.root_pane.pane_id')
+        sleep 0.5
+        herdr pane run "$pane" 'wt switch pr:{{.PrNumber}} -x "codex exec review --base $(gh pr view {{.PrNumber}} --json baseRefName -q .baseRefName)"'
 
 theme:
   colors:
